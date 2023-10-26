@@ -9,13 +9,49 @@ function factorear(num) {
 
 }
 
+// [5, 1, 4, 2, 8]
+//           |
+// [1, 4, 2, 5, 8]
+//           | swapped = true
+// [1, 2, 4, 5, 8]
+//           | swapped = false
+
 function bubbleSort(array) {
   // Implementar el método conocido como bubbleSort para ordenar de menor a mayor
   // el array recibido como parámetro
   // Devolver el array ordenado resultante
   // Tu código:
+  var swapped = false
+  var last = array.length - 1
 
+  do {
+    swapped = false
+    for(let i = 0; i < last; i++) {
+      if(array[i] > array[i + 1]) {
+        let temp = array[i]
+        array[i] = array[i + 1]
+        array[i + 1] = temp
+        swapped = true
+      }
+    }
+    last--
+
+  } while(swapped)
+
+  // for(let i = 0; i < array.length; i++){
+  //   for(let j = 0; j < array.length - i - 1; j++){ // 1
+  //     if(array[j] > array[j+1]){
+  //       let aux = array[j];
+  //       array[j] = array[j+1];
+  //       array[j+1] = aux;
+  //     }
+  //   }
+  // }
+
+  return array
 }
+
+
 
 
 function insertionSort(array) {
